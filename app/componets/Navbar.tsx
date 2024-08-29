@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/">
-        Marshal<span>Blog</span>
+        Marshal<span>Blog I dont have time to code today</span>
       </Link>
     </nav>
   );
