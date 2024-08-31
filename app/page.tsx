@@ -34,6 +34,7 @@ export default async function Home() {
             <p>{post.title}</p>
             <p>{post.smallDescription}</p>
             <p>{post.currentSlug}</p>
+            <p>{post.currentSlug}</p>
           </div>
         ))}
       </div>
