@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "./componets/Navbar";
 import { simpleBlogCard } from "./lib/interface";
 import { client, urlFor } from "./lib/sanity";
@@ -35,6 +36,9 @@ export default async function Home() {
             <p>{post.smallDescription}</p>
             <p>{post.currentSlug}</p>
             <p>{post.currentSlug}</p>
+            <button>
+              <Link href={`/blog/${post.currentSlug}`}>Read more</Link>
+            </button>
           </div>
         ))}
       </div>
