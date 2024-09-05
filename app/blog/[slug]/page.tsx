@@ -1,6 +1,7 @@
 import { client, urlFor } from "../../lib/sanity";
 import { fullBlog } from "../../lib/interface";
 import Image from "next/image";
+import { PortableText } from "next-sanity";
 
 async function getData(slug: string) {
   const query = `
@@ -34,6 +35,9 @@ export default async function BlogArticle({
         priority
         alt="Title Image"
       />
+      <div>
+        <PortableText value={data.content} />
+      </div>
     </div>
   );
 }
