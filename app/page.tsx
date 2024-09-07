@@ -4,6 +4,8 @@ import { simpleBlogCard } from "./lib/interface";
 import { client, urlFor } from "./lib/sanity";
 import Image from "next/image";
 
+export const revalidate = 30; // revalidate at most at 30 seconds
+
 async function getData() {
   const query = `*[_type == 'blog'] | order(_createdAt desc) {
   title,
