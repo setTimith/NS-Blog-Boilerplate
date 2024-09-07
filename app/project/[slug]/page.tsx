@@ -1,16 +1,15 @@
 import { client, urlFor } from "../../lib/sanity";
-import { fullBlog } from "../../lib/interface";
+import { fullProject } from "../../lib/interface";
 import Image from "next/image";
-import { PortableText } from "next-sanity";
 
 export const revalidate = 30; // revalidate at most at 30 seconds
 
 async function getData(slug: string) {
   const query = `
-    *[_type == "blog" && slug.current == '${slug}'] {
+    *[_type == "project" && slug.current == '${slug}'] {
         "currentSlug": slug.current,
         title,
-        content,
+        smallDescription,
         titleImage
     
     }[0]`;
@@ -19,16 +18,15 @@ async function getData(slug: string) {
   return data;
 }
 
-export default async function BlogArticle({
+export default async function ProjectArticle({
   params,
 }: {
   params: { slug: string };
 }) {
-  const data: fullBlog = await getData(params.slug);
+  const data: fullProject = await getData(params.slug);
 
   return (
     <div>
-      <h1> Jan- Marshal Blog</h1>
       <h2>{data.title}</h2>
       <Image
         src={urlFor(data.titleImage).url()}
@@ -38,7 +36,7 @@ export default async function BlogArticle({
         alt="Title Image"
       />
       <div>
-        <PortableText value={data.content} />
+        <p>{data.smallDescription}</p>
       </div>
     </div>
   );

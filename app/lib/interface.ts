@@ -1,4 +1,4 @@
-export interface simpleBlogCard {
+export interface simpleProjectCard {
     title: string,
     smallDescription: string;
     currentSlug: string;
@@ -6,10 +6,10 @@ export interface simpleBlogCard {
 
 }
 
-export interface fullBlog {
-    currentSlug: string;
+export interface fullProject {
     title: string;
-    content: any;
+    currentSlug: string;
+    smallDescription: string;
     titleImage: any;
 
 }

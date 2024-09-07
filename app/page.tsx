@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Navbar from "./componets/Navbar";
-import { simpleBlogCard } from "./lib/interface";
+import { simpleProjectCard } from "./lib/interface";
 import { client, urlFor } from "./lib/sanity";
 import Image from "next/image";
 
 export const revalidate = 30; // revalidate at most at 30 seconds
 
 async function getData() {
-  const query = `*[_type == 'blog'] | order(_createdAt desc) {
+  const query = `*[_type == 'project'] | order(_createdAt desc) {
   title,
     smallDescription,
     "currentSlug": slug.current,
@@ -20,7 +20,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data: simpleBlogCard[] = await getData();
+  const data: simpleProjectCard[] = await getData();
 
   return (
     <div>
@@ -36,10 +36,8 @@ export default async function Home() {
             />
             <p>{post.title}</p>
             <p>{post.smallDescription}</p>
-            <p>{post.currentSlug}</p>
-            <p>{post.currentSlug}</p>
             <button>
-              <Link href={`/blog/${post.currentSlug}`}>Read more</Link>
+              <Link href={`/project/${post.currentSlug}`}>Read more</Link>
             </button>
           </div>
         ))}
