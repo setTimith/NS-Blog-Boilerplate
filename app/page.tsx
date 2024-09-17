@@ -40,7 +40,6 @@ export default async function Home() {
           <div
             key={idx}
             style={{
-              width: "10svw",
               display: "flex",
               alignItems: "center",
               flexDirection: "column",
