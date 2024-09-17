@@ -23,11 +23,20 @@ export default async function Home() {
   const data: simpleProjectCard[] = await getData();
 
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <Navbar />
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "40px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          width: "1600px",
+        }}
+      >
         {data.map((post, idx) => (
-          <div key={idx} style={{ width: "20svw" }}>
+          <div key={idx} style={{ width: "10svw" }}>
             <Image
               src={urlFor(post.titleImage).url()}
               alt="image"
