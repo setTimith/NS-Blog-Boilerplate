@@ -36,7 +36,15 @@ export default async function Home() {
         }}
       >
         {data.map((post, idx) => (
-          <div key={idx} style={{ width: "10svw" }}>
+          <div
+            key={idx}
+            style={{
+              width: "10svw",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             <Image
               src={urlFor(post.titleImage).url()}
               alt="image"
