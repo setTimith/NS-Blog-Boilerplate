@@ -32,7 +32,7 @@ export default async function Home() {
           display: "flex",
           flexWrap: "wrap",
           gap: "20px",
-          width: "1600px",
+          width: "800px",
         }}
       >
         {data.map((post, idx) => (
