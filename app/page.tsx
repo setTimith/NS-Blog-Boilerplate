@@ -32,7 +32,6 @@ export default async function Home() {
           display: "flex",
           flexWrap: "wrap",
           gap: "20px",
-          width: "800px",
           justifyContent: "center",
         }}
       >
