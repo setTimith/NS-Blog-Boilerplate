@@ -44,10 +44,10 @@ export default async function Home() {
               height={200}
             />
             <p>{post.title}</p>
-            <p>{post.smallDescription}</p>
-            <button>
+            {/* <p>{post.smallDescription}</p> */}
+            {/* <button>
               <Link href={`/project/${post.currentSlug}`}>Read more</Link>
-            </button>
+            </button> */}
           </div>
         ))}
       </div>
